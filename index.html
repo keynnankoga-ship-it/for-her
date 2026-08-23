@@ -1004,6 +1004,177 @@
       .album-art{ max-width:260px; }
       footer{ flex-direction:column; }
     }
+/* ============================================================
+   SPOTIFY PLAYLIST BELOW "OUR SONG"
+============================================================ */
+
+.spotify-playlist-card {
+    margin-top: 32px;
+    padding: clamp(24px, 5vw, 45px);
+
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 30px;
+
+    border: 1px solid rgba(255,255,255,.13);
+
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(255,126,168,.12),
+            transparent 35%
+        ),
+        rgba(255,255,255,.04);
+
+    box-shadow: var(--shadow);
+}
+
+
+/* Subtle glow */
+
+.spotify-playlist-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    top: -180px;
+    right: -120px;
+
+    border-radius: 50%;
+
+    background: rgba(255,126,168,.12);
+
+    filter: blur(45px);
+
+    pointer-events: none;
+}
+
+
+/* Heading */
+
+.spotify-playlist-heading {
+    max-width: 760px;
+    margin-bottom: 30px;
+}
+
+
+.spotify-kicker {
+    display: block;
+
+    color: var(--rose);
+
+    font-size: .72rem;
+    font-weight: 700;
+
+    letter-spacing: .18em;
+
+    text-transform: uppercase;
+
+    margin-bottom: 10px;
+}
+
+
+.spotify-playlist-heading h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(2rem, 5vw, 3.5rem);
+
+    font-weight: 500;
+
+    line-height: 1.05;
+
+    margin-bottom: 18px;
+}
+
+
+.spotify-playlist-heading p {
+    color: var(--muted);
+
+    line-height: 1.85;
+
+    margin-bottom: 12px;
+}
+
+
+/* Spotify Player */
+
+.spotify-embed-wrapper {
+    padding: 8px;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,.045);
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        0 20px 50px
+        rgba(0,0,0,.25);
+}
+
+
+.spotify-embed-wrapper iframe {
+    display: block;
+
+    width: 100%;
+
+    border: 0;
+
+    border-radius: 12px;
+}
+
+
+/* Romantic ending */
+
+.spotify-ending {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 22px;
+
+    color: var(--muted);
+
+    text-align: center;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.1rem;
+}
+
+
+.spotify-ending span {
+    color: var(--rose);
+}
+
+
+/* Mobile */
+
+@media (max-width: 620px) {
+
+    .spotify-playlist-card {
+        margin-top: 20px;
+
+        padding: 22px 15px;
+    }
+
+
+    .spotify-embed-wrapper {
+        padding: 5px;
+    }
+
+
+    .spotify-ending {
+        font-size: .95rem;
+    }
+}
   </style>
 </head>
 
@@ -1348,6 +1519,54 @@
           </div>
         </div>
       </div>
+<!-- =====================================================
+     SPOTIFY PLAYLIST
+===================================================== -->
+
+<div class="spotify-playlist-card reveal">
+
+    <div class="spotify-playlist-heading">
+        <span class="spotify-kicker">MORE SONGS FOR YOU ♡</span>
+
+        <h3>And Then There Is Our Playlist...</h3>
+
+        <p>
+            One song could never carry everything I want to say to you.
+            So beneath our special song, I left you a collection of melodies
+            for the moments when words aren't quite enough.
+        </p>
+
+        <p>
+            Some are for the quiet moments. Some are for the late-night
+            conversations. Some are for the drives I hope we'll take,
+            the dates I hope we'll have, and the memories we haven't
+            even made yet.
+        </p>
+    </div>
+
+    <div class="spotify-embed-wrapper">
+
+        <iframe
+            data-testid="embed-iframe"
+            style="border-radius:12px"
+            src="https://open.spotify.com/embed/playlist/4tiSY7CgFAu5t5sYXVwihn?utm_source=generator&si=c5b9020f1bd044dd"
+            width="100%"
+            height="352"
+            frameborder="0"
+            allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+        </iframe>
+
+    </div>
+
+    <div class="spotify-ending">
+        <span>♪</span>
+        <em>Maybe one day, these songs will remind us of how our story began.</em>
+        <span>❤</span>
+    </div>
+
+</div>
     </section>
 
     <section class="question-wrap" id="question">
